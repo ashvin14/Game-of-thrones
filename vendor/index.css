@@ -1,0 +1,70 @@
+.headline{
+  font-family : Perpetua;
+  font-size : 40px;
+  color : #494949;
+  color : rgb(73, 73, 73);
+  margin-left: 5%;
+}
+.container{
+	background-color: #CCCCCC;
+
+}
+.header{
+	width: 50%;
+}
+.form-control{
+	background-color: #B3B3B3;
+	 border-radius : 12px;
+  -moz-border-radius : 12px;
+  -webkit-border-radius : 12px;
+  /* background: url(images/magnigy.png) no-repeat scroll 7px 7px; */
+  font-family : Myriad Pro;
+}
+hr{
+	 border-top: 1px solid #ababab;
+	}
+.view{
+	background : #808080;
+  background : rgb(179, 179, 179);
+  height : 9%;
+  
+}
+.filterButton{
+	background-image: url(images/filterButton.png);
+	background-repeat: no-repeat;
+	height:15%;
+	width: 29%;
+
+}
+.bookCover{
+	    background-color: #505050;
+    position: relative;
+    top: 9%;
+    left: 16%;
+    height: 81%;
+    width: 68%;
+    border-width: 4px;
+    border-style: Solid;
+    border-color: #292929;
+  
+    font-family: Myriad Pro;
+    font-size: 3vh;
+    color: #FFFFFF;
+    text-align: center;
+}
+body{
+	background-color: #fff;
+}
+
+.view .bookcover:hover{
+	transition: .3s transform;
+    -webkit-transform: scale(.9,.9);
+}
+.view .bookcover:hover{
+  transition: .3s transform;
+    -webkit-transform: scale(.9,.9);
+}
+.view:hover{
+  transition: .3s transform;
+  -webkit-transform: scale(1.1,1.1);
+}

@@ -1,0 +1,11 @@
+<div class="characterView" ng-repeat="char in charCtrl.character" >
+	<div ng-repeat="(key,value) in char ">
+		<ul class="characterProperty"  ng-hide="value===''" >
+			
+			<li ng-if="charCtrl.isArray(value)" class="commonLiProperty"><b>{{key}}</b>:<span ng-repeat="(k,v) in value track by $index">{{v}},</span></li>
+			<li ng-if="!charCtrl.isArray(value)" class="commonLiProperty"><b>{{key}}</b>:{{value}} </li>
+			
+		</ul>
+	</div>
+	
+</div>

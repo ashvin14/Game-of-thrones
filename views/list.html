@@ -1,0 +1,39 @@
+<div class="list" >
+	<div class="header">
+		<div class="row">
+			<div class="col-sm-4"><input type="text" placeholder="character" class="form-control" aria-describedby="sizing-addon1" ng-model="character"></div>
+			<div class="col-sm-4"><input type="text" placeholder="Books" class="form-control" aria-describedby="sizing-addon1" ng-model="book"></div>
+			<div class="col-sm-4"><input type="text" placeholder="Houses" class="form-control" aria-describedby="sizing-addon1" ng-model="house"></div>
+		</div>
+	</div>
+	<div class="row">
+		<button class="btn btn-lg" ng-click="tupleCtrl.tab=1">Books</button>
+		<button class="btn btn-lg" ng-click="tupleCtrl.tab=2">Characters</button>
+		<button class="btn btn-lg" ng-click="tupleCtrl.tab=3">Houses</button>
+	</div>
+	
+	<div class="row">
+		<div class="repeat" ng-repeat="tuple in tupleCtrl.body|filter:{name:book}|filter:{name:house}|filter:{name:character}|orderBy:'name'">
+			
+			<div class="books" ng-show="tupleCtrl.isSelected(1)">
+				<div ng-show="tuple.type==='book'">
+					<my-book ></my-book>
+				</div>
+			</div>
+			<div class="characters"  ng-show="tupleCtrl.isSelected(2)">
+				<div ng-show="tuple.type==='character'" >
+					<my-character></my-character>
+				</div >
+			</div>
+			<div class="houses"  ng-show="tupleCtrl.isSelected(3)">
+				<div ng-show="tuple.type==='house'">
+					<my-house ></my-house>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	</br>
+	
+	
+</div>
