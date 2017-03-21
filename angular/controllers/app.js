@@ -150,8 +150,104 @@ myapp.controller('bookControl',['$routeParams','apiservice',function($routeParam
 	}
 	
 	this.loadInfoForBook();
-	console.log(this.book)
+	
 	
 
+}])
+myapp.controller('houseController',['$routeParams','apiservice',function($routeParams,apiservice){
+	this.name=$routeParams.name;
+	this.house=[];
+	var main=this;
+	console.log(this.name)
+	
+	this.isArray=function(element){
+		return typeof(element)==='object';
+	}
+	this.loadInfoForHouse=function(){
+		apiservice.getInfoForHouse(main.name).then(function(response){
+			console.log(response.data)
+			main.house=response.data;
+			for(var i in main.house){
+				
+			main.house[i].url="";
+			
+			function checkForEmptyArray(obj,prop){
+				
+			if (obj[prop].length!=0)
+			{
+				var length=[];
+			for(var j in obj[prop]){
+				apiservice.getInfo(obj[prop][j],function(response){
+					length.push(response.data.name);
+					console.log(length)
+					//main.character[i].books.push(response.data.name);
+
+			
+				})
+
+			}
+			obj[prop]=length;
+		}
+		else{
+			obj[prop]="";
+		}
+
+
+
+
+
+
+
+
+			}
+			
+			checkForEmptyArray(main.house[i],"ancestralWeapons");
+			checkForEmptyArray(main.house[i],"cadetBranches");
+			checkForEmptyArray(main.house[i],"seats");
+			checkForEmptyArray(main.house[i],"swornMembers")
+			checkForEmptyArray(main.house[i],"titles")
+			
+
+
+
+			apiservice.getInfo(main.house[i].currentLord,function(response){
+				if(response.data.name!=undefined)
+				main.house[i].currentLord=response.data.name;
+
+				console.log(response.data.name)
+
+			})
+			apiservice.getInfo(main.house[i].overlord,function(response){
+				if(response.data.name!=undefined)
+				main.house[i].overlord=response.data.name;
+				console.log(main.house[i].overlord);
+			})
+			apiservice.getInfo(main.house[i].founder,function(response){
+				if(response.data.name!=undefined)
+				main.house[i].founder=response.data.name;
+				console.log(main.house[i].founder);
+				
+			})
+			apiservice.getInfo(main.house[i].heir,function(response){
+				if(response.data.name!=undefined)
+				main.house[i].heir=response.data.name;
+				console.log(main.house[i].heir);
+				
+			})
+			
+
+			
+			
+		}
+			
+
+		},function(){
+			alert("some error has occured while loading api")
+		})
+	}
+	
+	this.loadInfoForHouse();
+	
+	
 }])
 

@@ -1,3 +1,11 @@
+
+.list{
+ 
+  margin-top: 3%;
+}
+.list .header{
+  margin: 1%;
+}
 .headline{
   font-family : Perpetua;
   font-size : 40px;

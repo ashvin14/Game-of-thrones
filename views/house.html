@@ -1,0 +1,11 @@
+<div class="houseView" ng-repeat="house in houseCtrl.house" >
+	<div ng-repeat="(key,value) in house ">
+		<ul class="houseProperty"  ng-hide="value===''" >
+			
+			<li ng-if="houseCtrl.isArray(value)" class="commonLiProperty"><b>{{key}}</b>:<ol><li ng-repeat="(k,v) in value track by $index">{{v}}</li></ol></li>
+			<li ng-if="!houseCtrl.isArray(value)" class="commonLiProperty"><b>{{key}}</b>:{{value}} </li>
+			
+		</ul>
+	</div>
+	
+</div>

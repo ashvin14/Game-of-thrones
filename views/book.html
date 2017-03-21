@@ -2,7 +2,7 @@
 	<div ng-repeat="(key,value) in book ">
 		<ul class="bookProperty"  ng-hide="value===''" >
 			
-			<li ng-if="bookCtrl.isArray(value)" class="commonLiProperty"><b>{{key}}</b>:<span ng-repeat="(k,v) in value track by $index">{{v}},</span></li>
+			<li ng-if="bookCtrl.isArray(value)" class="commonLiProperty"><b>{{key}}</b>:<ol><li ng-repeat="(k,v) in value track by $index">{{v}}</li></ol></li>
 			<li ng-if="!bookCtrl.isArray(value)" class="commonLiProperty"><b>{{key}}</b>:{{value}} </li>
 			
 		</ul>

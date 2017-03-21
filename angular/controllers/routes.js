@@ -16,6 +16,11 @@ myapp.config(['$routeProvider',function($routeProvider){
 		controller:'characterController',
 		controllerAs:'charCtrl'
 	})
+	.when('/house/:name',{
+		templateUrl:'views/house.html',
+		controller:'houseController',
+		controllerAs:'houseCtrl'
+	})
 	 .otherwise(
             {
                 //redirectTo:'/'
