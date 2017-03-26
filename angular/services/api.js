@@ -1,6 +1,6 @@
 myapp.service('apiservice',function($http){
 	var main=this;
-	this.baseUrl='http://www.anapioficeandfire.com/api';
+	this.baseUrl='https://www.anapioficeandfire.com/api';
 	//service to get info for indexed characters
 	this.getInfoForCharacter=function(name){
 		return $http.get(main.baseUrl+'/characters?name='+name);
